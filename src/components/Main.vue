@@ -1,12 +1,21 @@
 <template>
-  <v-layout style="z-index: 0">
-    <v-app-bar color="#2196f3">QR-Code Generator</v-app-bar>
-    
-    <v-app-bar location="bottom" height="48" color="grey-lighten-2" elevation="0">Paul Nicholas</v-app-bar>
-    <v-navigation-drawer color="grey-darken-2" permanent></v-navigation-drawer>
-    <v-navigation-drawer color="grey-darken-2" permanent location="right"></v-navigation-drawer>
-    <v-main>
-      <v-card height="200px"></v-card>
-    </v-main>     
-  </v-layout>
+  <v-sheet class="pa-12">
+    <v-sheet
+      rounded="xl"
+      color="#065AB5"
+      class="mx-auto pa-12"
+      height="400"
+      width="100%"
+    >
+      <v-card width="400">
+        <v-card-item>
+          <v-card-title>This is a title</v-card-title>
+
+          <v-card-subtitle>This is a subtitle</v-card-subtitle>
+        </v-card-item>
+
+        <v-card-text> This is content </v-card-text>
+      </v-card>
+    </v-sheet>
+  </v-sheet>
 </template>
