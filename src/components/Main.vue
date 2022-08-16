@@ -12,7 +12,23 @@
 
       <h2 class="text-h4 pt-5">QR-Code Generator</h2>
       <span class="text-body-1">sdsdsdsfsdf</span>
-      <v-card width="400">
+      <v-form ref="form">
+        <v-text-field
+          v-model="url"
+          label="URL to PICO-8 Content"
+          hint="e.g. 'https://www.pico-8-edu.com/?c=...''"
+          required
+        ></v-text-field>
+        <v-btn
+          color="success"
+          class="mr-4"
+          @click="generateCode"
+        >
+          Generate
+        </v-btn>
+      </v-form>
+
+      <v-card width="400" class="mt-5 mx-auto">
         <v-card-item>
           <v-card-title>This is a title</v-card-title>
 
@@ -24,3 +40,15 @@
     </v-sheet>
   </v-sheet>
 </template>
+
+<script setup lang="ts">
+  console.log("hello script setup");
+
+  import { ref } from "vue";
+
+  const url = ref("");
+
+  const generateCode = () => {
+    console.log("TODO: Generate QR code for " + url.value);
+  }
+</script>
