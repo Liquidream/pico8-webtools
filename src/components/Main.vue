@@ -38,7 +38,7 @@
         <v-card-text>This is content</v-card-text>
       </v-card> --> 
       <div class="mt-5 mx-auto" width="200px">
-        <vue-qrcode :value="qrUrl" ></vue-qrcode>
+        <vue-qrcode v-if="qrUrl" :value="qrUrl" ></vue-qrcode>
       </div>
     </v-sheet>
   </v-sheet>
