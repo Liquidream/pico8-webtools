@@ -10,7 +10,9 @@
     "type-check": "vue-tsc --noEmit"
   },
   "dependencies": {
+    "@chenfengyuan/vue-qrcode": "^2.0.0",
     "@mdi/font": "5.9.55",
+    "qrcode": "^1.5.1",
     "roboto-fontface": "*",
     "vue": "^3.2.37",
     "vuetify": "^3.0.0-beta.0",
