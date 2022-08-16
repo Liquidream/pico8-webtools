@@ -8,16 +8,25 @@
       width="800"
     >
       <h1 class="text-h3">PICO-8 Web Tools</h1>
-      <span class="text-body-1">This simple QR code generator was designed for use with PICO-8 - specifically generating codes for creations made with the online <a href="https://www.pico-8-edu.com" target="_blank">Education Edition of PICO-8.</a></span>
+      <span class="text-body-1"
+        >This web tool was designed for use with PICO-8 -
+        such as generating QR codes for creations made with the online
+        <a href="https://www.pico-8-edu.com" target="_blank"
+          >Education Edition of PICO-8.</a
+        ></span
+      >
 
       <h2 class="text-h4 pt-5">QR-Code Generator</h2>
-      <span class="text-body-1">Simply paste in the URL of your creation (after doing <strong>SAVE @URL</strong> in PICO-8) and click to generate QR code.</span>
+      <span class="text-body-1"
+        >Paste in the URL of your creation (after doing
+        <strong>SAVE @URL</strong> in PICO-8) and click to generate.</span
+      >
       <v-form ref="form">
         <v-text-field
           v-model="inputUrl"
-          color="white"
+          class="mt-5"
           label="URL to PICO-8 Content"
-          hint="e.g. 'https://www.pico-8-edu.com/?c=...''"
+          hint="e.g. https://www.pico-8-edu.com/?c=..."
           required
         ></v-text-field>
         <v-btn color="success" class="mr-4" @click="generateCode">
@@ -25,18 +34,14 @@
         </v-btn>
       </v-form>
 
-      <!-- <v-card width="400" class="mt-5 mx-auto">
-        <v-card-item>
-          <v-card-title>This is a title</v-card-title>
+      <v-container fill-height fluid>
+        <v-row align="center" justify="center">
+          <v-col class="fill-height d-flex flex-column justify-center align-center">
+            <vue-qrcode v-if="qrUrl" :value="qrUrl" @ready="onReady"></vue-qrcode>
+          </v-col>
+        </v-row>
+      </v-container>
 
-          <v-card-subtitle>This is a subtitle</v-card-subtitle>
-        </v-card-item>
-
-        <v-card-text>This is content</v-card-text>
-      </v-card> -->
-      <div class="mt-5 mx-auto" width="200px">
-        <vue-qrcode v-if="qrUrl" :value="qrUrl" @ready="onReady"></vue-qrcode>
-      </div>
     </v-sheet>
   </v-sheet>
 </template>
