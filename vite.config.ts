@@ -16,5 +16,9 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
-  }
+  },
+  // PN added to expose dev server to network ######
+  server: {
+    host: "0.0.0.0",
+  },
 })

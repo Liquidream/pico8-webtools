@@ -3,14 +3,14 @@
     <v-sheet
       rounded="xl"
       elevation="12"
-      color="light-blue-lighten-3"
+      color="light-blue-lighten-4"
       class="mx-auto pa-12"
       width="800"
     >
       <h1 class="text-h3">PICO-8 Web Tools</h1>
       <span class="text-body-1"
-        >This web tool was designed for use with PICO-8 -
-        such as generating QR codes for creations made with the online
+        >This web tool was designed for use with PICO-8 - such as generating QR
+        codes for creations made with the online
         <a href="https://www.pico-8-edu.com" target="_blank"
           >Education Edition of PICO-8.</a
         ></span
@@ -36,19 +36,22 @@
 
       <v-container fill-height fluid>
         <v-row align="center" justify="center">
-          <v-col class="fill-height d-flex flex-column justify-center align-center">
-            <vue-qrcode v-if="qrUrl" :value="qrUrl" @ready="onReady"></vue-qrcode>
+          <v-col
+            class="fill-height d-flex flex-column justify-center align-center"
+          >
+            <vue-qrcode
+              v-if="qrUrl"
+              :value="qrUrl"
+              @ready="onReady"
+            ></vue-qrcode>
           </v-col>
         </v-row>
       </v-container>
-
     </v-sheet>
   </v-sheet>
 </template>
 
 <script setup lang="ts">
-console.log("hello script setup");
-
 import { ref } from "vue";
 import VueQrcode from "@chenfengyuan/vue-qrcode";
 
@@ -66,36 +69,15 @@ const generateCode = () => {
 const onReady = (canvas: any) => {
   const context = canvas.getContext("2d");
   const image = new Image();
-
-  image.src = "/lexaloffle-pico8.png";
+  // https://vitejs.dev/guide/build.html#public-base-path
+  image.src = import.meta.env.BASE_URL + "lexaloffle-pico8.png";
   image.crossOrigin = "anonymous";
   image.onload = () => {
     const coverage = 0.15;
     const width = Math.round(canvas.width * coverage);
     const x = (canvas.width - width) / 2;
 
-    drawImage(context, image, x, x, width, width);
+    context.drawImage(image, x, x, width, width);
   };
-};
-
-const drawImage = (context, image, x, y, width, height, radius = 4) => {
-  // context.shadowOffsetX = 0;
-  // context.shadowOffsetY = 2;
-  // context.shadowBlur = 4;
-  // context.shadowColor = '#00000040';
-  // context.lineWidth = 8;
-  // context.beginPath();
-  // context.moveTo(x + radius, y);
-  // context.arcTo(x + width, y, x + width, y + height, radius);
-  // context.arcTo(x + width, y + height, x, y + height, radius);
-  // context.arcTo(x, y + height, x, y, radius);
-  // context.arcTo(x, y, x + width, y, radius);
-  // context.closePath();
-  // context.strokeStyle = '#fff';
-  // context.stroke();
-  // context.clip();
-  // context.fillStyle = '#fff';
-  // context.fillRect(x, x, width, height);
-  context.drawImage(image, x, x, width, height);
 };
 </script>
