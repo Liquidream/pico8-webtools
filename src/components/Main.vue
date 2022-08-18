@@ -1,11 +1,11 @@
 <template>
-  <v-sheet class="pa-12 mx-auto">
+  <v-sheet :class="mobile ? undefined : 'pa-12 mx-auto'">
     <v-sheet
-      rounded="xl"
-      elevation="12"
+      :rounded="mobile ? 'undefined' : 'xl'"
+      :elevation="mobile ? undefined : 12"
       color="light-blue-lighten-4"
       class="mx-auto pa-12"
-      width="800"
+      :width="mobile ? undefined : 800"
     >
       <h1 class="text-h3">PICO-8 Web Tools</h1>
       <span class="text-body-1"
@@ -53,7 +53,10 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
+import { useDisplay } from 'vuetify'
 import VueQrcode from "@chenfengyuan/vue-qrcode";
+
+const { width, mobile } = useDisplay()
 
 const inputUrl = ref("");
 const qrUrl = ref("");
