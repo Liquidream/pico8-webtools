@@ -2,12 +2,10 @@
   "name": "pico8-webtools",
   "version": "0.0.0",
   "scripts": {
-    "serve": "vite preview",
-    "build": "vite build",
-    "build-only": "vite build",
     "dev": "vite",
-    "preview": "vite preview --port 4173",
     "type-check": "vue-tsc --noEmit",
+    "build": "vite build",
+    "serve": "vite preview",    
     "build github": "vite build --base=/pico8-webtools/",
     "serve github": "vite preview --base=/pico8-webtools/",
     "deploy github": "gh-pages -d dist"
