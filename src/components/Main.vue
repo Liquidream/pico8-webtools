@@ -12,7 +12,7 @@
         >These web tools were designed for use with the
         <a href="https://www.pico-8-edu.com" target="_blank"
           >Education Edition of PICO-8.</a
-        ><br />Such as generating QR codes or Itch.io web packages for your
+        ><br />Such as generating QR codes or Itch.io web files for your
         creations.
       </span>
       <qr-code-generator />
