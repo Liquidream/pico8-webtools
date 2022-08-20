@@ -1,5 +1,5 @@
 <template>
-  <v-sheet :class="mobile ? undefined : 'pa-12 mx-auto'">
+  <v-sheet :class="mobile ? undefined : 'pt-12 pl-12 pr-12 pb-6 mx-auto'">
     <v-sheet
       :rounded="mobile ? 'undefined' : 'xl'"
       :elevation="mobile ? undefined : 12"
@@ -12,36 +12,42 @@
         <img :src="pico8icon" />
         <h1 class="text-h3">PICO-8 Web Tools</h1>
       </div>
-      <div class="text-body-1 pt-5" style="clear: both;"
-        >These web tools were designed for use with the
+      <div class="text-body-1 pt-5" style="clear: both">
+        These web tools were designed for use with the
         <a href="https://www.pico-8-edu.com" target="_blank"
           >Education Edition of PICO-8.</a
         ><br />Such as generating QR codes or Itch.io web files for your
         creations.
       </div>
       <qr-code-generator />
-      <itch-zip-builder />      
+      <itch-zip-builder />
     </v-sheet>
   </v-sheet>
+  <my-footer />
 </template>
 
 <script setup lang="ts">
 import { useDisplay } from "vuetify";
 import QrCodeGenerator from "./QrCodeGenerator.vue";
 import ItchZipBuilder from "./ItchZipBuilder.vue";
+import MyFooter from "./MyFooter.vue";
 
 const { mobile } = useDisplay();
 const pico8icon = import.meta.env.BASE_URL + "lexaloffle-pico8.png";
 </script>
 
-<style scoped>
+<style>
 .header img {
   float: left;
   width: 50px;
 }
 
 .header h1 {
-  position: relative;  
+  position: relative;
   left: 10px;
+}
+
+a:link, a:visited {
+    color: #2962FF;
 }
 </style>
