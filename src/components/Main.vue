@@ -9,14 +9,14 @@
     >
       <h1 class="text-h3">PICO-8 Web Tools</h1>
       <span class="text-body-1"
-        >This web tool was designed for use with PICO-8 - such as generating QR
-        codes for creations made with the online
+        >These web tools were designed for use with the
         <a href="https://www.pico-8-edu.com" target="_blank"
           >Education Edition of PICO-8.</a
-        ></span
-      >
-
+        ><br />Such as generating QR codes or Itch.io web packages for your
+        creations.
+      </span>
       <qr-code-generator />
+      <itch-zip-builder />
     </v-sheet>
   </v-sheet>
 </template>
@@ -24,6 +24,7 @@
 <script setup lang="ts">
 import { useDisplay } from "vuetify";
 import QrCodeGenerator from "./QrCodeGenerator.vue";
+import ItchZipBuilder from "./ItchZipBuilder.vue";
 
 const { mobile } = useDisplay();
 </script>

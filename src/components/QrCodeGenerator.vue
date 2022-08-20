@@ -27,7 +27,6 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-import { useDisplay } from "vuetify";
 import VueQrcode from "@chenfengyuan/vue-qrcode";
 
 const inputUrl = ref("");

@@ -5,7 +5,7 @@
     "dev": "vite",
     "type-check": "vue-tsc --noEmit",
     "build": "vite build",
-    "serve": "vite preview",    
+    "serve": "vite preview",
     "build github": "vite build --base=/pico8-webtools/",
     "serve github": "vite preview --base=/pico8-webtools/",
     "deploy github": "gh-pages -d dist"
@@ -13,6 +13,8 @@
   "dependencies": {
     "@chenfengyuan/vue-qrcode": "^2.0.0",
     "@mdi/font": "5.9.55",
+    "file-saver": "^2.0.5",
+    "jszip": "^3.10.1",
     "qrcode": "^1.5.1",
     "roboto-fontface": "*",
     "vue": "^3.2.37",
@@ -20,6 +22,7 @@
     "webfontloader": "^1.0.0"
   },
   "devDependencies": {
+    "@types/file-saver": "^2.0.5",
     "@types/node": "^16.11.47",
     "@types/webfontloader": "^1.0.0",
     "@vitejs/plugin-vue": "^3.0.1",
