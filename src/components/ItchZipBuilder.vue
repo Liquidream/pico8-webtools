@@ -13,7 +13,7 @@
       hint="e.g. https://www.pico-8-edu.com/?c=..."
       required
     ></v-text-field>
-    <v-btn color="success" class="mr-4" @click="downloadZip"> Download </v-btn>
+    <v-btn :disabled="!inputUrl" color="success" class="mr-4" @click="downloadZip"> Download </v-btn>
   </v-form>
 </template>
 

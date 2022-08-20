@@ -12,7 +12,7 @@
       hint="e.g. https://www.pico-8-edu.com/?c=..."
       required
     ></v-text-field>
-    <v-btn color="success" class="mr-4" @click="generateCode"> Generate </v-btn>
+    <v-btn :disabled="!inputUrl" color="success" class="mr-4" @click="generateCode"> Generate </v-btn>
     <v-btn v-if="qrUrl" color="success" class="mr-4" @click="downloadQRCode"> Download </v-btn>
   </v-form>
 
