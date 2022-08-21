@@ -13,7 +13,7 @@
         <h1 class="text-h3">PICO-8 Web Tools</h1>
       </div>
       <div class="text-body-1 pt-5" style="clear: both">
-        These web tools were designed for use with the
+        These web tools are designed for use with the
         <a href="https://www.pico-8-edu.com" target="_blank"
           >Education Edition of PICO-8.</a
         ><br />Such as generating QR codes or Itch.io web files for your
@@ -49,5 +49,10 @@ const pico8icon = import.meta.env.BASE_URL + "lexaloffle-pico8.png";
 
 a:link, a:visited {
     color: #2962FF;
+}
+
+/* Add a slight gap at bottom of hint text */
+.v-messages {
+  margin-bottom: 5px;
 }
 </style>
