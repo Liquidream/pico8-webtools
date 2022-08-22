@@ -1,9 +1,12 @@
 <template>
-  <h2 class="text-h4 pt-5">Itch.io HTML File Builder</h2>
+  <h2 class="text-h4 pt-5">
+    <v-icon large color="blue-darken-2"> mdi-language-html5 </v-icon>Itch.io
+    HTML File Builder
+  </h2>
   <span class="text-body-1"
     >Paste in the URL of your creation (after doing
-    <strong>SAVE @URL</strong> in PICO-8) and click to download a HTML file,
-    which you can upload to a 
+    <strong><code>SAVE @URL</code></strong> in PICO-8) and click to download a
+    HTML file, which you can upload to a
     <a href="https://itch.io/game/new/" target="_blank">new Itch.io project</a>
     (e.g. to submit a jam entry).</span
   >

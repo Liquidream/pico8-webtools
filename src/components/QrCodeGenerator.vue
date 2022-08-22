@@ -1,8 +1,11 @@
 <template>
-  <h2 class="text-h4 pt-5">QR-Code Generator</h2>
+  <h2 class="text-h4 pt-5">
+    <v-icon large color="blue-darken-2"> mdi-qrcode </v-icon>QR-Code Generator
+  </h2>
   <span class="text-body-1"
     >Paste in the URL of your creation (after doing
-    <strong>SAVE @URL</strong> in PICO-8) and click to generate.</span
+    <strong><code>SAVE @URL</code></strong> in PICO-8) and click to
+    generate.</span
   >
   <v-form ref="form">
     <v-text-field
@@ -12,14 +15,28 @@
       hint="e.g. https://www.pico-8-edu.com/?c=..."
       required
     ></v-text-field>
-    <v-btn :disabled="!inputUrl" color="success" class="mr-4" @click="generateCode"> Generate </v-btn>
-    <v-btn v-if="qrUrl" color="success" class="mr-4" @click="downloadQRCode"> Download </v-btn>
+    <v-btn
+      :disabled="!inputUrl"
+      color="success"
+      class="mr-4"
+      @click="generateCode"
+    >
+      Generate
+    </v-btn>
+    <v-btn v-if="qrUrl" color="success" class="mr-4" @click="downloadQRCode">
+      Download
+    </v-btn>
   </v-form>
 
   <v-container fill-height fluid>
     <v-row align="center" justify="center">
       <v-col class="fill-height d-flex flex-column justify-center align-center">
-        <vue-qrcode v-if="qrUrl" :value="qrUrl" @ready="onReady" id="qrcanvas"></vue-qrcode>
+        <vue-qrcode
+          v-if="qrUrl"
+          :value="qrUrl"
+          @ready="onReady"
+          id="qrcanvas"
+        ></vue-qrcode>
       </v-col>
     </v-row>
   </v-container>
@@ -45,7 +62,7 @@ const onReady = (canvas: any) => {
   const context = canvas.getContext("2d");
   const image = new Image();
   // https://vitejs.dev/guide/build.html#public-base-path
-  image.src = pico8icon
+  image.src = pico8icon;
   image.crossOrigin = "anonymous";
   image.onload = () => {
     const coverage = 0.15;
@@ -59,10 +76,12 @@ const onReady = (canvas: any) => {
 // https://www.sanwebe.com/snippet/downloading-canvas-as-image-dataurl-on-button-click
 const downloadQRCode = () => {
   const canvas = document.getElementById("qrcanvas") as HTMLCanvasElement;
-  const image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
-  const link = document.createElement('a');
+  const image = canvas
+    .toDataURL("image/png")
+    .replace("image/png", "image/octet-stream");
+  const link = document.createElement("a");
   link.download = "my-qr-code.png";
   link.href = image;
   link.click();
-}
+};
 </script>

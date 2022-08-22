@@ -4,13 +4,12 @@
       :rounded="mobile ? 'undefined' : 'xl'"
       :elevation="mobile ? undefined : 12"
       color="light-blue-lighten-4"
-      class="mx-auto pa-12"
+      :class="mobile ? 'mx-auto pa-3' : 'mx-auto pa-12'"
       :width="mobile ? undefined : 800"
     >
       <!-- <v-img src="lexaloffle-pico8.png" height="64px"></v-img> -->
       <div class="header">
-        <img :src="pico8icon" />
-        <h1 class="text-h3">PICO-8 Web Tools</h1>
+        <h1 class="text-h3"><img :src="pico8icon" class="ml-n2 mr-1" /> PICO-8 Web Tools</h1>
       </div>
       <div class="text-body-1 pt-5" style="clear: both">
         These web tools are designed for use with the
@@ -47,8 +46,9 @@ const pico8icon = import.meta.env.BASE_URL + "lexaloffle-pico8.png";
   left: 10px;
 }
 
-a:link, a:visited {
-    color: #2962FF;
+a:link,
+a:visited {
+  color: #2962ff;
 }
 
 /* Add a slight gap at bottom of hint text */
